@@ -90,8 +90,8 @@ include('inc/header.php');
 				<tr>
 				<td><?php echo $values["item_name"]; ?></td>
 				<td class="text-center"><?php echo $values["item_quantity"] ?></td>
-				<td class="text-end">$ <?php echo $values["item_price"]; ?></td>
-				<td class="text-end">$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
+				<td class="text-end">TK <?php echo $values["item_price"]; ?></td>
+				<td class="text-end">TK <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
 				<td><a href="cart.php?action=delete&id=<?php echo $values["food_id"]; ?>" onclick="if(confirm('Are you sure to remove this item from cart list?') === false) { event.preventDefault() }"><span class="text-danger text-decoration-none">Remove</span></a></td>
 				</tr>
 				<?php 
@@ -100,7 +100,7 @@ include('inc/header.php');
 			?>
 			<tr>
 			<td colspan="3" class="text-end">Total</td>
-			<td class="text-end">$ <?php echo number_format($total, 2); ?></td>
+			<td class="text-end">TK <?php echo number_format($total, 2); ?></td>
 			<td></td>
 			</tr>
 			</table>

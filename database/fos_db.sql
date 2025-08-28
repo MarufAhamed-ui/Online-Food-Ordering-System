@@ -1,15 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2022 at 05:37 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.5
+-- Generation Time: Aug 21, 2025 at 07:02 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `fos_db`
@@ -28,7 +34,7 @@ CREATE TABLE `food_customer` (
   `password` varchar(50) NOT NULL,
   `phone` varchar(50) NOT NULL,
   `address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `food_customer`
@@ -52,20 +58,23 @@ CREATE TABLE `food_items` (
   `description` varchar(200) NOT NULL,
   `images` varchar(200) NOT NULL,
   `status` varchar(10) NOT NULL DEFAULT 'ENABLE'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `food_items`
 --
 
 INSERT INTO `food_items` (`id`, `name`, `price`, `description`, `images`, `status`) VALUES
-(1, 'Burger', 75, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim at dolor in posuere. Sed eleifend ipsum in sem placerat, sed semper felis tincidunt.', './images/burger.jfif', 'ENABLE'),
-(2, 'Fries', 50, 'Maecenas eleifend sit amet magna et consequat. Nunc a erat non arcu efficitur semper ut et mauris. Aenean sed faucibus purus. Duis hendrerit diam at leo imperdiet, vel placerat dolor porta.', './images/fries.jfif', 'ENABLE'),
-(3, 'Nachos', 105, 'Nam sagittis fringilla leo, eget eleifend orci vestibulum sed. Proin a sem eu tortor hendrerit sollicitudin. Vivamus tempus ullamcorper nibh vitae viverra.', './images/nachos.jpg', 'ENABLE'),
-(4, 'Pizza', 145, 'Sed sit amet neque fringilla, eleifend libero gravida, tempus nisl.', './images/pizza.jfif', 'ENABLE'),
-(5, 'Fried Chicken', 115, 'Cras vitae commodo sem. Nam viverra augue lacus, ut tempus nulla congue accumsan. Ut mattis ipsum ligula, non dignissim ex scelerisque eu.', './images/fried-chicken.png', 'ENABLE'),
-(6, 'Grilled Chciken', 135, 'Nulla tincidunt varius accumsan. Vivamus ac nunc nibh. Ut maximus nisi sed consectetur dictum.', './images/grilled-chicken.jpg', 'ENABLE'),
-(7, 'Roasted Pork Belly', 475, 'Curabitur bibendum leo sit amet lacinia laoreet. Quisque dapibus rutrum nunc, ac scelerisque elit porta in. Phasellus scelerisque sem in gravida placerat.', './images/roasted-pork-billy.jpg', 'ENABLE');
+(1, 'Chicken Kacchi Biryani', 210, 'Chicken Kacchi Biryani - A fragrant dum-cooked biryani made by layering raw marinated chicken with half-cooked basmati rice, slow-cooked with saffron and aromatic spices for tender meat.', './images/Hyderabadi Kacchi.jpg', 'ENABLE'),
+(2, 'Chicken BBQ', 140, 'Chicken BBQ is a smoky, tender, and juicy chicken dish cooked over a grill with special spices and sauces.', './images/bbq.jpg', 'ENABLE'),
+(3, 'Beef Rezala', 650, 'Juicy beef cooked in a creamy yogurt sauce with ghee and aromatic spices - a mild yet flavorful Mughlai delicacy.', './images/beef.jpg', 'ENABLE'),
+(4, 'Lamb Nihari', 550, 'Lamb Nihari - Slow-cooked lamb in a rich, spicy gravy, served with naan or paratha.', './images/nehari.jpg', 'ENABLE'),
+(5, 'Fries', 150, 'Maecenas eleifend sit amet magna et consequat. Nunc a erat non arcu efficitur semper ut et mauris. Aenean sed faucibus purus. Duis hendrerit diam at leo imperdiet, vel placerat dolor porta.', './images/fries.jfif', 'ENABLE'),
+(6, 'Nachos', 150, 'Nam sagittis fringilla leo, eget eleifend orci vestibulum sed. Proin a sem eu tortor hendrerit sollicitudin. Vivamus tempus ullamcorper nibh vitae viverra.', './images/nachos.jpg', 'ENABLE'),
+(7, 'Pizza', 650, 'Sed sit amet neque fringilla, eleifend libero gravida, tempus nisl.', './images/pizza.jfif', 'ENABLE'),
+(8, 'Fried Chicken', 250, 'Cras vitae commodo sem. Nam viverra augue lacus, ut tempus nulla congue accumsan. Ut mattis ipsum ligula, non dignissim ex scelerisque eu.', './images/fried-chicken.png', 'ENABLE'),
+(9, 'Grilled Chicken', 135, 'Nulla tincidunt varius accumsan. Vivamus ac nunc nibh. Ut maximus nisi sed consectetur dictum.', './images/grilled-chicken.jpg', 'ENABLE'),
+(10, 'Burger', 350, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dignissim at dolor in posuere. Sed eleifend ipsum in sem placerat, sed semper felis tincidunt.', './images/burger.jfif', 'ENABLE');
 
 -- --------------------------------------------------------
 
@@ -81,15 +90,15 @@ CREATE TABLE `food_orders` (
   `quantity` int(30) NOT NULL,
   `order_date` date NOT NULL,
   `order_id` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `food_orders`
 --
 
 INSERT INTO `food_orders` (`id`, `item_id`, `name`, `price`, `quantity`, `order_date`, `order_id`) VALUES
-(1, 3, 'Nachos', 105, 1, '2022-06-20', '944886993025460519'),
-(2, 2, 'Fries', 50, 1, '2022-06-20', '944886993025460519');
+(1, 3, 'Nachos', 150, 1, '2025-08-20', '944886993025460519'),
+(2, 2, 'Fries', 150, 1, '2025-08-20', '944886993025460519');
 
 --
 -- Indexes for dumped tables
@@ -128,7 +137,7 @@ ALTER TABLE `food_customer`
 -- AUTO_INCREMENT for table `food_items`
 --
 ALTER TABLE `food_items`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `food_orders`
@@ -146,3 +155,7 @@ ALTER TABLE `food_orders`
 ALTER TABLE `food_orders`
   ADD CONSTRAINT `item_id_fk` FOREIGN KEY (`item_id`) REFERENCES `food_items` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

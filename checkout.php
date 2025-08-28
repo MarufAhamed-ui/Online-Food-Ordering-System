@@ -56,10 +56,10 @@ include('inc/header.php');
 							?>
 							<div class="col-md-6 lh-1">
 								<h3>Order Summery</h3>
-								<p class="mb-1"><strong>Items</strong>: $<?php echo $orderTotal; ?></p>
-								<p class="mb-1"><strong>Delivery</strong>: $0</p>
-								<p class="mb-1"><strong>Total</strong>: $<?php echo $orderTotal; ?></p>
-								<p class="mb-1"><strong>Order Total</strong>: $<?php echo $orderTotal; ?></p>
+								<p class="mb-1"><strong>Items</strong>: TK <?php echo $orderTotal; ?></p>
+								<p class="mb-1"><strong>Delivery</strong>:TK 0</p>
+								<p class="mb-1"><strong>Total</strong>: TK <?php echo $orderTotal; ?></p>
+								<p class="mb-1"><strong>Order Total</strong>: TK <?php echo $orderTotal; ?></p>
 							</div>
 						</div>
 					</div>

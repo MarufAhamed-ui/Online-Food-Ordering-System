@@ -55,7 +55,7 @@ include('inc/header.php');
 								<div class="lh-1">
 									<div class="card-title fw-bold h5 mb-0"><?php echo $item["name"]; ?></div>
 									<div class="card-description text-muted"><small><?php echo $item["description"]; ?></small></div>
-									<div><small class="card-description text-success h6 mb-0">$ <?php echo $item["price"]; ?>/-</small></div>
+									<div><small class="card-description text-success h6 mb-0">TK <?php echo $item["price"]; ?>/-</small></div>
 									<div class="d-grid">
 									<div class="input-group input-sm">
 										<span class="input-group-text rounded-0">Quantity</span>
